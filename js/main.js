@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function(event){
 
     async function fetchCSV(){
         
-        const response = await fetch('chart-data.csv');
+        const response = await fetch('data/chart-data.csv');
         const textData = await response.text();
         const csvData = csvJSON(textData)
 
