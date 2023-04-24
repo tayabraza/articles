@@ -37,12 +37,8 @@ document.addEventListener('DOMContentLoaded', function(event){
     }
 
     async function fetchCSV(){
-        const response = await fetch('/data/chart-data.csv',{
-            headers: {
-                "Content-type": "text/csv"
-            } 
-        });
-
+        
+        const response = await fetch('https://articlesui.netlify.app/data/chart-data.csv');
         const textData = await response.text();
         const csvData = csvJSON(textData)
 
