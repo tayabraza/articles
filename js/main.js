@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function(event){
     }
 
     async function fetchCSV(){
-        const response = await fetch('data/chart-data.csv',{
+        const response = await fetch('/data/chart-data.csv',{
             headers: {
                 "Content-type": "text/csv"
             } 
