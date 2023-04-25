@@ -139,10 +139,6 @@ aside > h2{
     cursor: pointer;
 }
 
-#sidebar article:nth-child(2){
-    margin: 2rem 0;
-}
-
 .article{
     margin: 0 0.5rem 1.5rem;
     padding: 1rem;
@@ -233,6 +229,11 @@ aside > h2{
     #sidebar{
         display: block;
     }
+  
+    #sidebar article:nth-child(2){
+      margin: 2rem 0;
+    }
+  
     .copyright{
         color: #ffffff;
     }
