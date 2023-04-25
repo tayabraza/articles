@@ -121,7 +121,7 @@ aside > h2{
 }
 
 .main-section .article{
-    padding-bottom: 2rem;
+    padding-bottom: 1.3rem;
 }
 
 .main-section .article-title{
@@ -172,10 +172,16 @@ aside > h2{
     line-height: 1.8rem;
 }
 
+#data-chart{
+  padding: 0 0.5rem;
+}
+
 #line-chart{
     max-width: 100%;
     height: 350px;
     padding: 1rem 0.5rem;
+    box-shadow: rgb(211, 211, 211) 0px 0px 1rem 0.3rem;
+    border-radius: 0.5rem;
 }
 
 .footer-svg{
