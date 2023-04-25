@@ -12,7 +12,17 @@ document.addEventListener('DOMContentLoaded', function(event){
 
         })
 
-    })
+    });
+
+    document.querySelector('.hamburger-menu').addEventListener('click', function(event){
+
+        document.querySelectorAll('.hamburger-menu ~ .nav-item').forEach( item => {
+
+            window.getComputedStyle(item).display == 'none' ? item.style.display = 'block' : item.style.display = 'none'
+
+        });
+
+    });
 
     function csvJSON(csv){
 
@@ -63,10 +73,8 @@ document.addEventListener('DOMContentLoaded', function(event){
                 }
             ]
         }
-
-        const lineChart = document.getElementById('line-chart');
                 
-        new Chart(lineChart, {
+        new Chart(document.getElementById('line-chart'), {
             type: 'line',
             data: data,
             options: {

@@ -18,15 +18,19 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-nav, main {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem;
-}
-
 header, footer{
     margin: auto;
-    padding: 1rem;
+    text-align: center;
+}
+
+header{
+    background-image: url(../img/header.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#header{
+    padding: 20px 0 0;
 }
 
 img{
@@ -37,18 +41,70 @@ img{
     width: 100px;
 }
 
-header, footer{
-    text-align: center;
-}
-
-nav .nav-items{
-    margin: 1rem 0 0;
-    text-align: right;
-}
-
-nav .nav-items > .nav-item{
-    display: inline-block;
+nav, main {
+    max-width: 1200px;
+    margin: auto;
     padding: 1rem;
+}
+
+#nav {
+    display: block;
+    margin: 2rem auto;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.nav-items {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem 0.3rem #d3d3d3;
+}
+
+.nav-item a {
+    color: #a2d9ff;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-item:hover, .nav-item:hover > a, .active  {
+    cursor: pointer;
+    background: #a2d9ff;
+    color: #ffffff;
+}
+
+.nav-item.hamburger-menu:hover {
+    background: #ffffff;
+}
+
+.nav-items .active > a {
+    color: #ffffff;
+}
+
+.nav-items{
+    position: absolute;
+    top: 200px;
+    right: 1.8rem;
+    left: 1.8rem;
+    margin: 1rem 0 0;
+    background: #ffffff;
+    text-align: left;
+}
+
+.nav-items > .nav-item{
+    padding: 1.2rem;
+}
+
+.menu-icon{
+    width: 2rem;
+    float: right;
+    color: #858E8E;
+}
+
+.hamburger-menu ~ .nav-item{
+    display: none;
 }
 
 #main-content{
@@ -64,6 +120,14 @@ aside > h2{
     padding: 0.4rem;
 }
 
+.main-section .article{
+    padding-bottom: 2rem;
+}
+
+.main-section .article-title{
+    margin: 2rem 0;
+}
+
 #sidebar .article > .article-content{
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -75,6 +139,10 @@ aside > h2{
     cursor: pointer;
 }
 
+#sidebar article:nth-child(2){
+    margin: 2rem 0;
+}
+
 .article{
     margin: 0 0.5rem 1.5rem;
     padding: 1rem;
@@ -82,6 +150,10 @@ aside > h2{
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem 0.3rem #d3d3d3;
     overflow: hidden;
+}
+
+#sidebar .article:hover{
+    transform: scale(1.07);
 }
 
 .article-image {
@@ -101,16 +173,41 @@ aside > h2{
 
 .article-content{
     color: #858E8E;
-    line-height: 26px;
+    line-height: 1.8rem;
 }
 
 #line-chart{
     max-width: 100%;
-    height: 400px;
-    padding: 0.5rem;
+    height: 350px;
+    padding: 1rem 0.5rem;
+}
+
+.footer-svg{
+    margin-bottom: -0.8rem;
+}
+
+.copyright{
+    font-size: 0.9rem;
+    margin-top: -3rem;
 }
 
 @media screen and (min-width: 600px) {
+    #nav {
+        display: flex;
+        justify-content: flex-end;
+        margin: 1rem auto;
+    }
+    .nav-items {
+        position: static !important;
+        flex-direction: row;
+        text-align: right;
+    }
+    .hamburger-menu{
+        display: none !important;
+    }
+    .hamburger-menu ~ .nav-item{
+        display: block !important;
+    }
     #sidebar{
         display: flex;
     }
@@ -120,6 +217,7 @@ aside > h2{
     #sidebar .article{
         height: 400px;
     }
+
 }
 
 @media screen and (min-width: 900px) {
@@ -134,5 +232,8 @@ aside > h2{
 
     #sidebar{
         display: block;
+    }
+    .copyright{
+        color: #ffffff;
     }
 }
